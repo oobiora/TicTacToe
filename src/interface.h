@@ -4,13 +4,12 @@
 class Board
 {
     public:
-        void turn();
+        Board();
         void display();
+        char getData(int i);
+        void setData(int i, char c);
     protected:
-        Player playerOne;
-        Player playerTwo;
         char data[9];
-        int turns;
 };
 
 /*
@@ -19,17 +18,20 @@ Abstract player class
 class Player
 {
     public:
-        virtual int getTurn() = 0;
+        void getTurn();
+    protected:
+        Board* board;
+        char marker;
 };
 
 class HumanPlayer : public Player
 {
     public:
-        int getTurn();
+        HumanPlayer(Board* _b, char _m);
 };
 
 class ComputerPlayer : public Player
 {
     public:
-        int getTurn();
+        ComputerPlayer(Board* _b, char _m);
 };

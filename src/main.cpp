@@ -2,6 +2,7 @@
 #include "board.cpp"
 #include "player.cpp"
 #include "human.cpp"
+#include "computer.cpp"
 
 int main()
 {

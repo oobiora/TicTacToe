@@ -1,7 +1,4 @@
-HumanPlayer::HumanPlayer(Board* _b, char _m) : Player(_b, _m)
-{
-    //Player(_b, _m);
-}
+HumanPlayer::HumanPlayer(Board* _b, char _m) : Player(_b, _m) {}
 
 void HumanPlayer::turn()
 {

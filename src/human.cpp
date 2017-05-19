@@ -3,22 +3,24 @@ HumanPlayer::HumanPlayer(Board* _b, char _m) : Player(_b, _m)
     //Player(_b, _m);
 }
 
-void HumanPlayer::getTurn()
+void HumanPlayer::turn()
 {
     int i;
-    printf("Enter your tile number (1-9): ");
+    printf("%sEnter your tile number (1-9): %s", YELLOW, RESET);
     scanf("%i", &i);
-    //printf("\n");
+    printf("\n");
     i--;
-    if(i < 0 || i > 8)
+    if(i < 0 || i > 8)  
     {
-        printf("Error: Tile index out of range!\n");
-        getTurn();
+        printf("Error: Tile index out of range!\n\n");
+        board->display();
+        turn();
     }   
     if(board->getData(i) != 32) 
     {
-        printf("Error: Tile already taken!\n");
-        getTurn();
+        printf("Error: Tile already taken!\n\n");
+        board->display();
+        turn();
     }
     
     board->setData(i, marker);

@@ -36,8 +36,10 @@ void Board::display()
 }
 bool Board::isFull()
 {
-    //TODO
-    return false;
+    bool ret = true;
+    for(int i = 0; i < 9; i++)
+        ret = ret && (data[i] != 32);
+    return ret;
 }
 char Board::isWon()
 {
